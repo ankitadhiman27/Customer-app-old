@@ -1,0 +1,188 @@
+// http://ionicframework.com/docs/v2/theming/
+// Ionic Shared Functions
+// --------------------------------------------------
+// Makes Ionic Sass functions available to your App
+@import "globals.core";
+// App Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files. Setting
+// variables before Ionic's Sass will use these variables rather than
+// Ionic's default Sass variable values. App Shared Sass imports belong
+// in the app.core.scss file and not this file. Sass variables specific
+// to the mode belong in either the app.ios.scss or app.md.scss files.
+// App Shared Color Variables
+// --------------------------------------------------
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+// Both iOS and MD colors can be further customized if colors
+// are different per mode.
+$colors: ( primary: #387ef5, secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, favorite: #69BB7B);
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700,900';
+@font-face {
+  font-family: 'Mystical-Thin';
+  src: url('../../fonts/Mystical-Thin.eot?#iefix') format('embedded-opentype'), url('../../fonts/Mystical-Thin.woff') format('woff'), url('../../fonts/Mystical-Thin.ttf') format('truetype'), url('../../fonts/Mystical-Thin.svg#Mystical-Thin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratbold';
+  src: url('../../fonts/montserrat-bold-webfont.woff2') format('woff2'), url('../../fonts/montserrat-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratlight';
+  src: url('../../fonts/montserrat-light-webfont.woff2') format('woff2'), url('../../fonts/montserrat-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratregular';
+  src: url('../../fonts/montserrat-regular-webfont.woff2') format('woff2'), url('../../fonts/montserrat-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratsemi_bold';
+  src: url('../../fonts/montserrat-semibold-webfont.woff2') format('woff2'), url('../../fonts/montserrat-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.bg {
+  background: url(../../img/bg-wedding.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.main_logo {
+  padding: 10px;
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.7);
+  margin: 20px auto 0;
+  display: block;
+  background: rgba(227, 176, 103, 0.5);
+  img {
+    max-width: 140px;
+    margin: 0 auto;
+    display: block;
+    vertical-align: middle;
+    margin-top: 6px;
+    padding: 10px;
+  }
+}
+
+ion-navbar .toolbar-background {
+  background: rgba(251, 106, 0, 0.7);
+}
+
+ion-navbar .toolbar-title {
+  color: #fff;
+}
+
+ion-navbar button {
+  color: #fff !important;
+}
+
+.main_heading {
+  margin: 30px 0 20px 0;
+  display: block;
+  h2 {
+    color: #BE1400;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 34px;
+  }
+}
+
+ion-list {
+  .button {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: url(../../img/trans_black.png);
+    padding: 0 5px;
+    i {
+      display: block;
+      font-size: 30px;
+      margin-top: 18px;
+    }
+    p {
+      color: #fff;
+      display: block;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      word-wrap: break-word;
+      white-space: initial;
+      margin: 5px 0 0 0;
+    }
+  }
+  .button-inner {
+    display: block;
+  }
+}
+
+.toolbar-background {
+  background: none !important;
+}
+
+.button-list {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+ion-app ion-toolbar {
+  background: url(../../img/bg-left.jpg) !important;
+  padding: 0 !important;
+  height: 300px;
+}
+
+ion-title {
+  float: left;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 8px;
+  font-family: 'Lato', sans-serif;
+  .toolbar-title {
+    font-size: 16px;
+    color: #000;
+  }
+}
+
+ion-toolbar {
+  overflow: visible !important;
+}
+
+.admin {
+  border-radius: 50%;
+  text-align: center;
+  top: -5px;
+  position: relative;
+  margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    border: 10px solid rgba(240, 174, 64, 0.4);
+    background: #fff;
+    padding: 5px;
+  }
+}
