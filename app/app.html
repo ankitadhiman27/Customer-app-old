@@ -1,20 +1,30 @@
 <ion-menu [content]="content">
-
   <ion-toolbar>
     <div class="admin">
       <img src="img/admin.jpg">
     </div>
-    <ion-title>Admin</ion-title>
+    <ion-title>
+      <p class="main_heading">Admin</p>
+      <p>demo@gmail.com</p>
+      <p>phone No.</p>
+    </ion-title>
+    <button class="right" (click)="edited = !edited"></button>
   </ion-toolbar>
-
-  <ion-content>
-    <ion-list>
+  <ion-content class="left_bg">
+    <ion-list [hidden]="edited">
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        <span class="left_icons"><i [className]="p.icon"></i> </span>
+        <span class="title_text">{{p.title}}</span>
+        <span class=right_arrow><i class="fa fa-angle-right"></i></span>
+      </button>
+    </ion-list>
+
+    <ion-list [hidden]="!edited">
+      <button ion-item *ngFor="let p of company" (click)="openPage(p)">
+        <span class="left_icons"><i [className]="p.icon"></i> </span>
+        <span class="title_text">{{p.title}}</span>
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
-
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content></ion-nav>

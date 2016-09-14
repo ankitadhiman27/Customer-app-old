@@ -2,13 +2,13 @@ import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
 import {OrderPage} from './pages/order/order';
 import {StockHistoryPage} from './pages/stock-history/stock-history';
 import {PrefrencesPage} from './pages/prefrences/prefrences';
 import {AccountsPage} from './pages/accounts/accounts';
 import {AnalyticsPage} from './pages/analytics/analytics';
 import {NotificationsPage} from './pages/notifications/notifications';
+import {CompanyDetailPage} from './company/company-detail/company-detail';
 @Component({
   templateUrl: 'build/app.html'
 })
@@ -17,8 +17,8 @@ class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage: any = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
-
+  pages: Array<{title: string, component: any, icon: string}>;
+  company: Array<{title: string, component: any, icon: string}>;
   constructor(
     public platform: Platform,
     public menu: MenuController
@@ -27,14 +27,15 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Order', component: OrderPage },
-      { title: 'stock-history', component: StockHistoryPage },
-      { title: 'prefrences', component: PrefrencesPage },
-      { title: 'Accounts', component: AccountsPage },
-      { title: 'Analytics', component: AnalyticsPage },
-      { title: 'notifications', component: NotificationsPage }
+      { icon: 'fa fa-list' ,title: 'Order', component: OrderPage},
+      { icon: 'fa fa-history' ,title: 'Stock-history', component: StockHistoryPage,},
+      { icon: 'fa fa-cogs' , title: 'Prefrences', component: PrefrencesPage},
+      { icon: 'fa fa-user' ,title: 'Accounts', component: AccountsPage },
+      { icon: 'fa fa-line-chart', title: 'Analytics', component: AnalyticsPage,  },
+      { icon: 'fa fa-bell-o' , title: 'Notifications', component: NotificationsPage}
+    ];
+     this.company = [
+      { icon: 'fa fa-list' ,title: 'Order', component: CompanyDetailPage}
     ];
   }
 
