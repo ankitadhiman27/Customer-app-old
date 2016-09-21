@@ -9,22 +9,26 @@ import {AccountsPage} from './pages/accounts/accounts';
 import {AnalyticsPage} from './pages/analytics/analytics';
 import {NotificationsPage} from './pages/notifications/notifications';
 import {CompanyDetailPage} from './company/company-detail/company-detail';
+import {EmailPage} from './company/email/email';
+import {LoginPage} from './login/login/login';
+
 @Component({
   templateUrl: 'build/app.html'
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
-
   // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = LoginPage;
+  name: string;
   pages: Array<{title: string, component: any, icon: string}>;
   company: Array<{title: string, component: any, icon: string}>;
+
   constructor(
     public platform: Platform,
     public menu: MenuController
   ) {
     this.initializeApp();
-
+    this.name = "Company Name";
     // set our app's pages
     this.pages = [
       { icon: 'fa fa-list' ,title: 'Order', component: OrderPage},
@@ -35,8 +39,10 @@ class MyApp {
       { icon: 'fa fa-bell-o' , title: 'Notifications', component: NotificationsPage}
     ];
      this.company = [
-      { icon: 'fa fa-list' ,title: 'Order', component: CompanyDetailPage}
+      { icon: 'fa fa-building' ,title: 'Company Name', component: CompanyDetailPage},
+      { icon: 'fa fa fa-envelope-o' ,title: 'Email', component: EmailPage}
     ];
+
   }
 
   initializeApp() {
@@ -48,6 +54,7 @@ class MyApp {
   }
 
   openPage(page) {
+  this.name = page.title;
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page

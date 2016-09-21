@@ -1,14 +1,19 @@
 <ion-menu [content]="content">
-  <ion-toolbar>
-    <div class="admin">
-      <img src="img/admin.jpg">
+  <ion-toolbar class="left_toolbar">
+    <div class="admin_outer">
+      <div class="admin">
+        <img src="img/admin.jpg">
+      </div>
+      <ion-title class="right">
+        <p class="main_heading">Admin</p>
+        <p>demo@gmail.com</p>
+        <p>phone No.</p>
+      </ion-title>
     </div>
-    <ion-title>
-      <p class="main_heading">Admin</p>
-      <p>demo@gmail.com</p>
-      <p>phone No.</p>
-    </ion-title>
-    <button class="right" (click)="edited = !edited"></button>
+    <div class="company_detail">
+      <p>{{name}}</p>
+      <button class="fa fa-angle-down right toggle_btn" (click)="edited = !edited"></button>
+    </div>
   </ion-toolbar>
   <ion-content class="left_bg">
     <ion-list [hidden]="edited">
